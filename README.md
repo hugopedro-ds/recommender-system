@@ -3,6 +3,9 @@
 > **Recommender System (PoC)** usando dados de Open Finance para sugerir produtos/serviços financeiros relevantes aos clientes.  
 > Abordagem: **User-Based Collaborative Filtering** com **Similaridade do Cosseno** e **Correlação de Pearson**.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ypiJz4l5GtgyZQM-fty0Rh8cxRwpa_vJ?usp=sharing)
+
+
 ---
 
 ## 📌 Visão Geral
