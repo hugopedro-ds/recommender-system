@@ -1,26 +1,30 @@
 # Quantum Finance — data-driven-recommendation-system (FIAP)
+**Python · Recommender Systems · Notebook · License**
 
-Python · Recommender Systems · Notebook · License
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ypiJz4l5GtgyZQM-fty0Rh8cxRwpa_vJ?usp=sharing)
 
-# 📋 Visão Geral
-Prova de Conceito (PoC) de Sistema de Recomendação para a fintech QuantumFinance, usando dados consentidos do Open Finance para sugerir produtos/serviços financeiros relevantes aos clientes.
+## 📋 Visão Geral
+Prova de Conceito (PoC) de **Sistema de Recomendação (SR)** para a fintech **QuantumFinance**, usando dados consentidos do **Open Finance** para sugerir **produtos/serviços financeiros** relevantes aos clientes.
 
-Abordagem: User-Based Collaborative Filtering (CF) com Similaridade do Cosseno e Correlação de Pearson, gerando recomendações com explicação simples (clientes semelhantes + contribuição).
+**Abordagem:** *User-Based Collaborative Filtering (CF)* com **Similaridade do Cosseno** e **Correlação de Pearson**, gerando recomendações com explicação simples (*clientes semelhantes + contribuição*).
 
----
-
-# 🔑 Key Results
-
-- Construção da matriz usuário × item (intensidade de relação/interesse)
-- Recomendações Top-N por cliente com 2 medidas de similaridade (Cosseno e Pearson)
-- Saída final: ranking de produtos + score + “por quê” (clientes similares que puxaram a recomendação)
-- Estrutura pronta para evoluir para híbrido, conteúdo, métricas offline e A/B tests
+**Objetivo de negócio**
+- Aumentar relevância das ofertas (*cross-sell/upsell*)
+- Melhorar experiência do cliente com sugestões contextualizadas
+- Criar base para evolução (*híbrido, conteúdo, online learning, A/B tests*)
 
 ---
 
-# 📁 Estrutura do projeto
+## 🔑 Key Results
+- Construção da **matriz usuário × item** (intensidade de relação/interesse)
+- Recomendações **Top-N** por cliente com **2 medidas de similaridade** (Cosseno e Pearson)
+- Saída final: **ranking de produtos + score + “por quê”** (clientes similares que puxaram a recomendação)
+- Estrutura pronta para evoluir para **métricas offline** e **experimentos (A/B tests)**
 
-```
+---
+
+## 📁 Estrutura do projeto
+```text
 img/                     # Gráficos, tabelas e outputs do notebook
 ├── 01_dataset_preview.png
 ├── 02_user_item_matrix_preview.png
@@ -36,11 +40,11 @@ outputs/                 # Resultados gerados (tabelas recomendação, rankings)
 models/                  # (opcional) se guardar artefatos no futuro
 
 README.md                # Documentação do projeto
-```
+``` 
 
 ---
 
-# 🧠 Técnicas e Abordagem
+## 🧠 Técnicas e Abordagem
 
 - Sistema de recomendação baseado em Filtragem Colaborativa por Usuário (User-Based CF):
 - Matriz usuário × item (intensidade)
@@ -52,18 +56,24 @@ README.md                # Documentação do projeto
 - Identifica clientes mais similares ao cliente-alvo
 - Agrega sinais dos vizinhos para itens não consumidos
 - Retorna ranking + score e, quando possível, explicação (quem contribuiu)
+- **Filtragem Colaborativa Baseada em Usuários (User-Based CF)**
+- **Similaridade do Cosseno** (0 a 1)
+- **Correlação de Pearson** (-1 a 1)
 
 ---
 
-# 📌 Por que esta técnica?
+## 📌 Por que esta técnica?
 
 - Excelente para PoC quando há sobreposição de produtos entre clientes
 - Interpretável e fácil de explicar para stakeholders
 - Baixo custo computacional para cenários pequenos/médios
+- Boa para **prova de conceito** quando há sobreposição de produtos entre clientes
+- É **interpretável** e fácil de explicar para stakeholders
+- Baixo custo computacional para cenários pequenos/médios
 
 ---
 
-# 🚀 Como Usar
+## 🚀 Como Usar
 1) Instalação (requirements.txt)
 - Pré-requisitos
 - Python 3.8+
@@ -91,14 +101,14 @@ README.md                # Documentação do projeto
 
 ---
 
-# 📊 Dataset
+## 📊 Dataset
 - Fonte: Dataset reduzido fornecido na disciplina (Open Finance – handson).
 - Formato típico: .txt contendo um dicionário/estrutura com clientes e seus produtos/sinais.
 - Obs.: este projeto utiliza apenas dados consentidos e não trabalha com identificadores diretos sensíveis.
 
 ---
 
-# 🔎 O que foi feito no notebook
+## 🔎 O que foi feito no notebook
 - Importação e leitura da base
 - Leitura do arquivo do dataset (estrutura em dict)
 - Padronização de chaves e produtos
@@ -122,7 +132,7 @@ README.md                # Documentação do projeto
 
 ---
 
-# 🏆 Resultados (Resumo Executivo)
+## 🏆 Resultados (Resumo Executivo)
 - O protótipo entrega um pipeline completo de recomendação:
 - Entrada: clientes + produtos (Open Finance)
 - Processamento: matriz usuário×item → similaridade → ranking Top-N
@@ -130,7 +140,7 @@ README.md                # Documentação do projeto
 
 ---
 
-# 📌 Exemplo de Saída
+## 📌 Exemplo de Saída
 - Cliente (amostra): Client_007
 - Recomendações (Cosine): Cartão Premium, Seguro Vida, Investimento Renda Fixa
 - Score: 0.82 | 0.77 | 0.69
@@ -139,7 +149,7 @@ README.md                # Documentação do projeto
 
 ---
 
-# ✅ Entregáveis
+## ✅ Entregáveis
 
 ✅ Entregável 1 — Contexto e Objetivo
 - Problema: recomendação personalizada de produtos/serviços financeiros
@@ -158,7 +168,7 @@ README.md                # Documentação do projeto
 
 ---
 
-# 🔧 Funcionalidades
+## 🔧 Funcionalidades
 - Constrói matriz usuário × item (intensidade)
 - Calcula similaridade de usuários por Cosseno e Pearson
 - Gera recomendações Top-N por cliente
@@ -167,14 +177,14 @@ README.md                # Documentação do projeto
 
 ---
 
-# 🔐 Segurança e Privacidade
+## 🔐 Segurança e Privacidade
 - Dados tratados como consentidos (Open Finance)
 - Evita exposição de identificadores diretos sensíveis
 - Explicabilidade simples para auditoria e governança inicial
 
 ---
 
-# 📦 Dependências
+## 📦 Dependências
 - Python 3.8+
 - NumPy: cálculos
 - Pandas: manipulação
@@ -183,7 +193,7 @@ README.md                # Documentação do projeto
 
 ---
 
-# 🛣️ Próximos Passos (Evolução realista)
+## 🛣️ Próximos Passos (Evolução realista)
 - Métricas offline: Precision@K, Recall@K, MAP@K, NDCG
 - Ajuste de intensidade (pesos por frequência/volume/tempo) e normalizações
 - Cold-start: recomendações por conteúdo (perfil/segmento)
@@ -193,81 +203,19 @@ README.md                # Documentação do projeto
 
 ---
 
-# 📚 Referências
+## 📚 Referências
 - Open Finance Brasil (conceitos e ecossistema)
 - Técnicas: User-Based Collaborative Filtering, Cosine Similarity, Pearson Correlation
 - Boas práticas: avaliação offline (Precision@K, Recall@K) e testes online (A/B)
 
 ---
 
-# 📄 Licença
+## 📄 Licença
 Este projeto é uma prova de conceito desenvolvida para fins acadêmicos.
 
 ---
 
-# 👥 Autores
+## 👥 Autores
 Projeto desenvolvido para o Case Study de Recommendation Systems (FIAP).
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-# Sistema de Recomendação — Open Finance — QuantumFinance
-
-> **Recommender System (PoC)** usando dados de Open Finance para sugerir produtos/serviços financeiros relevantes aos clientes.  
-> Abordagem: **User-Based Collaborative Filtering** com **Similaridade do Cosseno** e **Correlação de Pearson**.
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ypiJz4l5GtgyZQM-fty0Rh8cxRwpa_vJ?usp=sharing)
-
-
----
-
-## 📌 Visão Geral
-Este projeto implementa um **Sistema de Recomendação (SR)** para a fintech **QuantumFinance**, explorando dados consentidos do ecossistema **Open Finance** para gerar recomendações personalizadas.
-
-**Objetivo de negócio**
-- Aumentar relevância das ofertas (cross-sell/upsell)
-- Melhorar experiência do cliente com sugestões contextualizadas
-- Criar base para evolução (híbrido, conteúdo, online learning, A/B tests)
-
----
-
-## 🧠 Técnica Implementada
-- **Filtragem Colaborativa Baseada em Usuários (User-Based CF)**
-- **Similaridade do Cosseno** (0 a 1)
-- **Correlação de Pearson** (-1 a 1)
-
-**Por que esta técnica?**
-- Boa para **prova de conceito** quando há sobreposição de produtos entre clientes
-- É **interpretável** e fácil de explicar para stakeholders
-- Baixo custo computacional para cenários pequenos/médios
-
----
-
-## 📁 Estrutura do Repositório
-```open-finance-recommender/
-├── notebooks/
-│   └── recommendations_systems.ipynb   # Notebook principal (EDA + SR + recomendações)
-├── README.md
-└── .gitignore
-```
-
-## 🚀 Como executar (rápido)
-
-### Opção A — Abrir no Google Colab
-Abra o notebook principal:
-- [`notebooks/recommendations_systems.ipynb`](./notebooks/recommendations_systems.ipynb)
-
-> Dica: adicione aqui o botão **Open in Colab** para execução 1-click.
-
-
-
