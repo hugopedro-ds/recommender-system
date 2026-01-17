@@ -1,8 +1,9 @@
 # Quantum Finance — data-driven-recommendation-system (FIAP)
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![pandas](https://img.shields.io/badge/pandas-data%20analysis-yellow)
+![numpy](https://img.shields.io/badge/numpy-numerical-lightgrey)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
-![Notebook](https://img.shields.io/badge/notebook-Jupyter%2FColab-red)
 ![License](https://img.shields.io/badge/license-academic-lightgrey)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ypiJz4l5GtgyZQM-fty0Rh8cxRwpa_vJ?usp=sharing)
@@ -53,8 +54,8 @@ README.md                # Documentação do projeto
  - Matriz usuário × item (intensidade) Representa quanto cada cliente “tem relação” com um produto (ex.: possui, usa, transaciona, tem volume etc.).
 
 - **Medidas de similaridade**
-  - **Cosine Similarity (0 a 1):** compara padrão de consumo/produtos em vetores normalizados
-  - **Pearson Correlation (-1 a 1):** captura similaridade de “tendência” (variações relativas), útil quando escalas diferem
+  - **Similaridade do Cosseno (Cosine Similarity) (0 a 1):** compara padrão de consumo/produtos em vetores normalizados
+  - **Correlação de Pearson (Pearson Correlation) (-1 a 1):** captura similaridade de “tendência” (variações relativas), útil quando escalas diferem
  - **Geração de recomendações (Top-N)** 
   - Identifica clientes mais similares ao cliente-alvo
   - Agrega sinais dos vizinhos para itens não consumidos
@@ -62,13 +63,9 @@ README.md                # Documentação do projeto
 
 ---
 
-## 📌 Por que esta técnica?
-
+## 📌 **Por que esta técnica?**
 - Excelente para PoC quando há sobreposição de produtos entre clientes
 - Interpretável e fácil de explicar para stakeholders
-- Baixo custo computacional para cenários pequenos/médios
-- Boa para **prova de conceito** quando há sobreposição de produtos entre clientes
-- É **interpretável** e fácil de explicar para stakeholders
 - Baixo custo computacional para cenários pequenos/médios
 
 ---
